@@ -16,4 +16,4 @@
 **CatalogoLivros.Interfaces:** camada responsável por todas as Assinaturas dos Métodos (Funcionalidades) que são implementados na camada CatalogoLivros.DAL; <br />
 **CatalogoLivros.DAL:** camada responsável pela manipulação de dados; **CatalogoLivros.SGBDDAL:** camada responsável pela fonte de acesso dos dados).
 
-<p>**Cross-Cutting Concerns***: São funcionalidades que não estão diretamente relacionadas ao domínio da aplicação ou às suas respectivas regras de negócio, mas que ainda sim, são importantes para o Software. Exemplos: envio de emails, criptografia de senhas, etc.</p>
+<p>_Cross-Cutting Concerns_*: São funcionalidades que não estão diretamente relacionadas ao domínio da aplicação ou às suas respectivas regras de negócio, mas que ainda sim, são importantes para o Software. Exemplos: envio de emails, criptografia de senhas, etc.</p>
