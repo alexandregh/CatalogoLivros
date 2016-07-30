@@ -1,0 +1,48 @@
+﻿@model CatalogoLivros.Web.Models.Usuario.EmailUsuario.ModelViewEmailUsuario
+@{
+    ViewBag.Title = "Usuário - Esqueci meu Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuário - Esqueci meu Login</h2>
+<a href="/Obra/CatalogoServicosFuncionalidades">Voltar</a>
+@{
+    using (Html.BeginForm("RecuperarLogin", "Usuario", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        <aside class="textoSucesso">
+            <p>
+                @ViewBag.MensagemOk
+            </p>
+        </aside>
+        <aside class="textoErro">
+            <p>
+                @ViewBag.MensagemErro
+            </p>
+        </aside>
+        if (string.IsNullOrEmpty(ViewBag.MensagemErro))
+        {
+            <aside class="textoErro">
+                <p>
+                    @Html.ValidationSummary()
+                </p>
+            </aside>
+        }
+        <fieldset>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th class="tdPesquisa">
+                        @Html.LabelFor(model => model.Email)
+                    </th>
+                    <th class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.Email, new { @autofocus = true, @type = "email", @class = "elementosFormulario", @placeholder = "Email do Usuário..." })
+                    </th>
+                    <th class="tdPesquisa">
+                        <input type="submit" value="Recuperar Login" class="btn btn-success" />
+                    </th>
+                </tr>
+            </table>
+        </fieldset>
+    }
+}

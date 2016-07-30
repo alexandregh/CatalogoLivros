@@ -1,0 +1,165 @@
+﻿@model CatalogoLivros.Web.Models.Obra.Atualizacao.ModelViewAtualizacaoObra
+@{
+    ViewBag.Title = "Obras - Atualizacar Obra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Obras - Atualizar Obra</h2>
+<a href="/Obra/CatalogoServicosFuncionalidades">Voltar</a>
+@{
+    using (Html.BeginForm("PesquisarAtualizarObras", "Obra", FormMethod.Get))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+        <aside class="textoErro">
+            <p>
+                @ViewBag.MensagemErro
+            </p>
+        </aside>
+        if (string.IsNullOrEmpty(ViewBag.MensagemErro))
+        {
+            <aside class="textoErro">
+                <p>
+                    @Html.ValidationSummary()
+                </p>
+            </aside>
+        }
+        <fieldset>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.Titulo)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.Titulo, new { @autofocus = true, @class = "elementosFormulario", @placeholder = "Título da Obra..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.NomeAutor)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.NomeAutor, new { @class = "elementosFormulario", @placeholder = "Nome do Autor..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.ISBN)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.ISBN, new { @class = "elementosFormulario", @placeholder = "ISBN da Obra..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        <input type="submit" value="Pesquisar Obra" class="btn btn-primary" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    }
+}
+
+@{
+    if(Model != null)
+    {
+        using (Html.BeginForm("AtualizarObra", "Obra", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <aside class="textoSucesso">
+                <p>
+                    @ViewBag.MensagemOk
+                </p>
+            </aside>
+            <aside class="textoErro">
+                <p>
+                    @ViewBag.MensagemErro
+                </p>
+            </aside>
+            <aside class="textoErro">
+                <p>
+                    @Html.ValidationSummary()
+                </p>
+            </aside>
+            <fieldset>
+                <br /><h3 class="h3">Dados da Obra</h3>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="td">
+                            @Html.LabelFor(itemModel => Model.Titulo)
+                        </th>
+                        <th class="td">
+                            @Html.TextBoxFor(itemModel => Model.Titulo, new { @class = "elementosFormulario", @placeholder = "Título da Obra do Usuário..." })
+                        </th>
+                        <th class="td">
+                            @Html.LabelFor(itemModel => itemModel.Genero)
+                        </th>
+                        <th class="td">
+                            @Html.EnumDropDownListFor(itemModel => itemModel.Genero, "Selecione o Gênero", new { @class = "elementosFormulario" })
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td" valign="top">
+                            @Html.LabelFor(itemModel => Model.ISBN)
+                        </th>
+                        <th class="td" valign="top">
+                            @Html.TextBoxFor(itemModel => Model.ISBN, new { @id = "txtISBN", @maxlength = "13", @class = "elementosFormulario", @placeholder = "ISBN da Obra do Usuário..." })
+                        </th>
+                        <th class="td" valign="top">
+                            @Html.LabelFor(itemModel => itemModel.Sinopse)
+                        </th>
+                        <th class="td">
+                            @Html.TextAreaFor(itemModel => itemModel.Sinopse, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Sinópse da Obra do Usuário..." })
+                        </th>
+                    </tr>
+                </table>
+                <h3 class="h3">Dados do Autor</h3>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="td" valign="top">
+                            @Html.LabelFor(itemModel => Model.NomeAutor)
+                        </th>
+                        <th class="td" valign="top">
+                            @Html.TextBoxFor(itemModel => Model.NomeAutor, new { @class = "elementosFormulario", @placeholder = "Nome do Autor da Obra do Usuário..." })
+                        </th>
+                        <th class="td" valign="top">
+                            @Html.LabelFor(itemModel => itemModel.DescricaoAutor)
+                        </th>
+                        <th class="td">
+                            @Html.TextAreaFor(itemModel => itemModel.DescricaoAutor, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição do Autor da Obra do Usuário..." })
+                        </th>
+                    </tr>
+                </table>
+                <h3 class="h3">Dados da Editora</h3>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="td">
+                            @Html.LabelFor(itemModel => itemModel.NomeEditora)
+                        </th>
+                        <th class="td">
+                            @Html.TextBoxFor(itemModel => itemModel.NomeEditora, new { @class = "elementosFormulario", @placeholder = "Nome da Editora da Obra do Usuário..." })
+                        </th>
+                        <th class="td">
+                            @Html.LabelFor(itemModel => itemModel.TipoEditora)
+                        </th>
+                        <th class="td">
+                            @Html.EnumDropDownListFor(itemModel => itemModel.TipoEditora, "Selecione o Tipo da Editora", new { @class = "elementosFormulario" })
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td" valign="top">
+                            @Html.LabelFor(itemModel => itemModel.DescricaoEditora)
+                        </th>
+                        <th class="td">
+                            @Html.TextAreaFor(itemModel => itemModel.DescricaoEditora, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição da Editora da Obra do Usuário..." })
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td">
+                            <input type="submit" value="Atualizar Obra" class="btn btn-success" />
+                        </th>
+                    </tr>
+                </table>
+            </fieldset>
+        }
+    }
+}

@@ -1,0 +1,3 @@
+﻿$(function () {
+    $('#st-accordion').accordion();
+});

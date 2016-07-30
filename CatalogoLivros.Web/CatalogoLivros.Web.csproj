@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BEF470E-26CA-4ACA-A597-0C7A2206638E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CatalogoLivros.Web</RootNamespace>
+    <AssemblyName>CatalogoLivros.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\DBCatalogoLivros.mdf" />
+    <Content Include="App_Data\DBCatalogoLivros_log.ldf">
+      <DependentUpon>DBCatalogoLivros.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\CatalogoLivros.css" />
+    <Content Include="Content\css\Formularios.css" />
+    <Content Include="Content\css\Textos.css" />
+    <Content Include="Content\imagens\body.jpg" />
+    <Content Include="Content\imagens\cabecalho.jpg" />
+    <Content Include="Content\imagens\conteudo.jpg" />
+    <Content Include="Content\imagens\logo.png" />
+    <Content Include="Content\imagens\rodape.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="ScriptsUI\AccordionMenu\images\icon_minus.png" />
+    <Content Include="ScriptsUI\AccordionMenu\images\icon_plus.png" />
+    <Content Include="ScriptsUI\AccordionMenu\images\pattern.png" />
+    <Content Include="ScriptsUI\AccordionMenu\index.html" />
+    <Content Include="ScriptsUI\AccordionMenu\scriptMenuAccordion.js" />
+    <Content Include="ScriptsUI\AccordionMenu\stylesMenuAccordion.css" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\css\style.css" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\images\down.png" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\images\pattern.png" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\js\jquery.accordion.js" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\js\jquery.easing.1.3.js" />
+    <Content Include="ScriptsUI\FlexibleSlideAccordion\js\StartAccordion.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\ScriptsJQuery\ExibicaoObras\ExibicaoObras.js" />
+    <Content Include="Scripts\ScriptsJQuery\ValidacaoCampos\ValidacaoCampos.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ObraController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Obra\AtivacaoDesativacao\ModelViewAtivacaoDesativacao.cs" />
+    <Compile Include="Models\Obra\Atualizacao\ModelViewAtualizacaoObra.cs" />
+    <Compile Include="Models\Obra\Cadastro\ModelViewCadastroObra.cs" />
+    <Compile Include="Models\Obra\Exibicao\ModelViewExibicaoObras.cs" />
+    <Compile Include="Models\Obra\Pesquisa\ModelViewPesquisaObra.cs" />
+    <Compile Include="Models\Usuario\Atualizacao\ModelViewAtualizacaoUsuario.cs" />
+    <Compile Include="Models\Usuario\Cadastro\ModelViewCadastroUsuario.cs" />
+    <Compile Include="Models\Usuario\EmailUsuario\ModelViewEmailUsuario.cs" />
+    <Compile Include="Models\Usuario\LoginUsuario\ModelViewLoginUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Obra\CadastroObra.cshtml" />
+    <Content Include="Views\Obra\AtualizacaoObra.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\CadastroUsuario.cshtml" />
+    <Content Include="Views\Usuario\AtualizacaoUsuario.cshtml" />
+    <Content Include="Views\Usuario\LoginUsuario.cshtml" />
+    <Content Include="Views\Obra\Index.cshtml" />
+    <Content Include="Views\Obra\CatalogoServicosFuncionalidades.cshtml" />
+    <Content Include="Views\Obra\ExibicaoObras.cshtml" />
+    <Content Include="Views\Obra\PesquisaObra.cshtml" />
+    <Content Include="Views\Obra\AtivacaoDesativacaoObra.cshtml" />
+    <Content Include="Views\Obra\ExibicaoObrasAtivas.cshtml" />
+    <Content Include="Views\Obra\ExibicaoObrasInativas.cshtml" />
+    <Content Include="Views\Usuario\EsqueciLogin.cshtml" />
+    <Content Include="Views\Usuario\EsqueciSenha.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fotos\FotoObra\" />
+    <Folder Include="Fotos\FotoUsuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogoLivros.DAL\CatalogoLivros.DAL.csproj">
+      <Project>{f41121c2-df68-4cc3-bb53-4338cd7e1a00}</Project>
+      <Name>CatalogoLivros.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatalogoLivros.Domain\CatalogoLivros.Domain.csproj">
+      <Project>{64c7eae3-a421-42d4-ac48-c4dfc24e3638}</Project>
+      <Name>CatalogoLivros.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatalogoLivros.Interface\CatalogoLivros.Interface.csproj">
+      <Project>{75d32d5c-fe46-4e93-a1e9-ecedb37e9315}</Project>
+      <Name>CatalogoLivros.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatalogoLivros.SGBDDAL\CatalogoLivros.SGBDDAL.csproj">
+      <Project>{d0cdd8f0-4923-4b48-a92d-0a489f98a4d2}</Project>
+      <Name>CatalogoLivros.SGBDDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CatalogoLivros.Util\CatalogoLivros.Util.csproj">
+      <Project>{cff24d2f-8be8-41a6-aa0c-9cefce80ccfb}</Project>
+      <Name>CatalogoLivros.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22989</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:22989/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,138 @@
+﻿@model PagedList.IPagedList<CatalogoLivros.Web.Models.Obra.Exibicao.ModelViewExibicaoObras>
+@{
+    ViewBag.Title = "Obras - Exibicao de Obras Ativas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Obras - Exibição de Obras Ativas</h2>
+<a href="/Obra/CatalogoServicosFuncionalidades">Voltar</a>
+<hr />
+<aside class="textoErro">
+    <p>
+        @ViewBag.MensagemErro
+    </p>
+</aside>
+<aside class="textoErro">
+    <p>
+        @Html.ValidationSummary()
+    </p>
+</aside>
+<br /><br />
+@{
+    if(Model != null)
+    {
+        foreach (var itensObras in Model)
+        {
+            <fieldset>
+                <table border="0" cellpadding="0" cellspacing="0" class="table">
+                    <tr>
+                        <th colspan="5">
+                            <h3 class="h3">Dados da Obra</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td">
+                            <img class="imgObras" src="@itensObras.CaminhoFotoObra" alt="@itensObras.Titulo" title="@itensObras.Titulo" width="100" height="120" />
+                        </th>
+                        <th class="td">
+                            <span>Título:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.Titulo)
+                        </th>
+                        <th class="td">
+                            <span>Genero:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.Genero)
+                        </th>
+                        <th class="td">
+                            <span>ISBN:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.ISBN)
+                        </th>
+                        <th class="td">
+                            <span>StatusObra:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.StatusObra)
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td" colspan="5">
+                            <span>Sinopse</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.Sinopse)
+                        </th>
+                    </tr>
+                </table>
+
+                <table border="0" cellpadding="0" cellspacing="0" class="table">
+                    <tr>
+                        <th colspan="2">
+                            <h3 class="h3">Dados do Autor</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td">
+                            <span>Nome do Autor:</span>
+                            @Html.DisplayFor(modelItem => itensObras.NomeAutor)
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td">
+                            <span>Descrição do Autor:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.DescricaoAutor)
+                        </th>
+                    </tr>
+                </table>
+
+                <table border="0" cellpadding="0" cellspacing="0" class="table">
+                    <tr>
+                        <th colspan="2">
+                            <h3 class="h3">Dados da Editora</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="td">
+                            <span>Nome da Editora:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.NomeEditora)
+                        </th>
+                        <th class="td">
+                            <span>Tipo da Editora:</span><br />
+                            @Html.DisplayFor(modelItem => itensObras.TipoEditora)
+                        </th>
+                    </tr>
+                </table>
+            </fieldset>
+        }
+    }
+}
+
+@{
+    if(Model != null)
+    { 
+        <div id="paginacao">
+            Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+            de @Model.PageCount
+
+            @if (Model.HasPreviousPage)
+            {
+                @Html.ActionLink("<<", "ExibirObrasAtivas", new { pagina = 1 })
+                @Html.Raw(" ");
+                @Html.ActionLink("< Anterior", "ExibirObrasAtivas", new { pagina = Model.PageNumber - 1 })
+            }
+            else
+            {
+                @:<<
+                @Html.Raw(" ");
+                @:< Anterior
+            }
+
+            @if (Model.HasNextPage)
+            {
+                @Html.ActionLink("Próxima >", "ExibirObrasAtivas", new { pagina = Model.PageNumber + 1 })
+                @Html.Raw(" ");
+                @Html.ActionLink(">>", "ExibirObrasAtivas", new { pagina = Model.PageCount })
+            }
+            else
+            {
+                @:Próxima >
+                @Html.Raw(" ")
+                @:>>
+            }
+        </div>
+    }
+}

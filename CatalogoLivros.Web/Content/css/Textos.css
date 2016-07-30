@@ -1,0 +1,39 @@
+﻿.textoSucesso
+{
+    display:block;
+    width:100%;
+    height:auto;
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+    color:green;
+}
+.textoErro
+{
+    display:block;
+    width:100%;
+    height:auto;
+    position:relative;
+    text-align:center;
+    vertical-align:middle;
+    color:red;
+}
+.paragrafo
+{
+    text-indent: 30px;
+    text-align: justify;
+    font-size: 24px;
+    font-family: 'Times New Roman';
+}
+.bold
+{
+    font-weight: bold;
+}
+.italic
+{
+    font-style: italic;
+}
+.h3
+{
+    text-indent: 10px;
+}

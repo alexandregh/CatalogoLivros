@@ -1,0 +1,145 @@
+﻿@model CatalogoLivros.Web.Models.Obra.Pesquisa.ModelViewPesquisaObra
+@{
+    ViewBag.Title = "Obras - Pesquisa de Obra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Obras - Pesquisa de Obra</h2>
+<a href="/Obra/CatalogoServicosFuncionalidades">Voltar</a>
+@{
+    using (Html.BeginForm("PesquisarObra", "Obra", FormMethod.Get))
+    {
+        @Html.AntiForgeryToken()
+        <hr />
+    <aside class="textoSucesso">
+        <p>
+            @ViewBag.MensagemOk
+            </p>
+        </aside>
+        <aside class="textoErro">
+            <p>
+                @ViewBag.MensagemErro
+            </p>
+        </aside>
+        if (string.IsNullOrEmpty(ViewBag.MensagemErro))
+        {
+            <aside class="textoErro">
+                <p>
+                    @Html.ValidationSummary()
+                </p>
+            </aside>   
+        }
+        <fieldset>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.Titulo)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.Titulo, new { @autofocus = true, @class = "elementosFormulario", @placeholder = "Título da Obra..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.NomeAutor)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.NomeAutor, new { @class = "elementosFormulario", @placeholder = "Nome do Autor..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        @Html.LabelFor(model => model.ISBN)
+                    </td>
+                    <td class="tdPesquisa">
+                        @Html.TextBoxFor(model => model.ISBN, new { @class = "elementosFormulario", @placeholder = "ISBN da Obra..." })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdPesquisa">
+                        <input type="submit" value="Pesquisar Obra" class="btn btn-primary" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    }
+}
+
+@{
+    if(Model != null)
+    {
+        <br />
+        <fieldset>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th colspan="5">
+                        <h3 class="h3">Dados da Obra</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td">
+                        <img class="imgObras" src="@Model.CaminhoFotoObra" alt="@Model.Titulo" title="@Model.Titulo" width="100" height="120" />
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.Titulo)<br />
+                        @Html.DisplayFor(modelItem => Model.Titulo)
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.Genero)<br />
+                        @Html.DisplayFor(modelItem => Model.Genero)
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.ISBN)<br />
+                        @Html.DisplayFor(modelItem => Model.ISBN)
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.StatusObra)<br />
+                        @Html.DisplayFor(modelItem => Model.StatusObra)
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td" colspan="5">
+                        @Html.DisplayNameFor(model => model.Sinopse)<br />
+                        @Html.DisplayFor(modelItem => Model.Sinopse)
+                    </th>
+                </tr>
+            </table>
+
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th colspan="2">
+                        <h3 class="h3">Dados do Autor</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.NomeAutor)<br />
+                        @Html.DisplayFor(modelItem => Model.NomeAutor)
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.DescricaoAutor)<br />
+                        @Html.DisplayFor(modelItem => Model.DescricaoAutor)
+                    </th>
+                </tr>
+            </table>
+
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th colspan="2">
+                        <h3 class="h3">Dados da Editora</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.NomeEditora)<br />
+                        @Html.DisplayFor(modelItem => Model.NomeEditora)
+                    </th>
+                    <th class="td">
+                        @Html.DisplayNameFor(model => model.TipoEditora)<br />
+                        @Html.DisplayFor(modelItem => Model.TipoEditora)
+                    </th>
+                </tr>
+            </table>
+        </fieldset>
+    }
+}

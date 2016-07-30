@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Obras - Catálogo de Serviços e Funcionalidades";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Obras - Catálogo de Serviços e <br /> Funcionalidades</h2>
+<a href="/Obra/Index">Voltar</a>
+<hr />
+<p class="paragrafo">
+    Seja Bem-Vindo a seção de Catálogo de Serviços e Funcionalidades.
+</p>
+<p class="paragrafo">
+    Essa seção tem por objetivo disponibilizar todos os Serviços e suas 
+    respectivas Funcionalidades acerca das Obras de cada Usuário. Segue-se 
+    abaixo todos os Serviços e suas Funcionalidades que cada Usuário poderá realizar.
+</p>
+
+<div class="wrapper">
+    <div id="st-accordion" class="st-accordion">
+        <ul>
+            <li>
+                <a href="#">Lista de Serviços e Funcionalidades<span class="st-arrow">Open or Close</span></a>
+                <div class="st-content">
+                    <p><a href="/Obra/CadastroObra" title="Cadastrar Obra">Cadastrar Obra.</a></p>
+                    <p><a href="/Obra/AtualizacaoObra" title="Atualizar Obra">Atualizar Obra.</a></p>
+                    <p><a href="/Obra/AtivacaoDesativacaoObra" title="Ativar/Desativar Obra">Ativar/Desativar Obra.</a></p>
+                    <p><a href="/Obra/ExclusaoObra" title="Excluir Obra">Excluir Obra.</a></p>
+                    <p><a href="/Obra/PesquisaObra" title="Pesquisar Obra">Pesquisar Obra.</a></p>
+                    <p><a href="/Obra/ExibicaoObras" title="Exibir Obras">Exibir Obras.</a></p>
+                    <p><a href="/Obra/ExibicaoObrasAtivas" title="Exibir Obras Ativas">Exibir Obras Ativas.</a></p>
+                    <p><a href="/Obra/ExibicaoObrasInativas" title="Exibir Obras Inativas">Exibir Obras Inativas.</a></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="paragrafo" style="margin-top:150px;">
+    <span class="italic">
+        Obs: todos esses Serviços e suas respectivas Funcionalidades podem ser acessadas
+        através do menu ao lado na categoria denominada Obra.
+    </span>
+</p>

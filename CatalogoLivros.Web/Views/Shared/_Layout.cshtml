@@ -1,0 +1,104 @@
+﻿@using CatalogoLivros.Domain.Entity;
+@using CatalogoLivros.Domain.Enum;
+@using CatalogoLivros.DAL.Persistence.PersistenceUsuario;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/CatalogoLivros.css" rel="stylesheet" />
+    <link href="~/ScriptsUI/AccordionMenu/stylesMenuAccordion.css" rel="stylesheet" />
+    <link href="~/ScriptsUI/FlexibleSlideAccordion/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/Formularios.css" rel="stylesheet" />
+    <link href="~/Content/css/Textos.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/ScriptsUI/AccordionMenu/scriptMenuAccordion.js"></script>
+    <script src="~/ScriptsUI/FlexibleSlideAccordion/js/jquery.accordion.js"></script>
+    <script src="~/ScriptsUI/FlexibleSlideAccordion/js/jquery.easing.1.3.js"></script>
+    <script src="~/ScriptsUI/FlexibleSlideAccordion/js/StartAccordion.js"></script>
+    <script src="~/Scripts/ScriptsJQuery/ValidacaoCampos/ValidacaoCampos.js"></script>
+    <script src="~/Scripts/ScriptsJQuery/ExibicaoObras/ExibicaoObras.js"></script>
+    <script src="~/Scripts/jquery.mask.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="row">
+            <div class="col-md-12">
+                <div id="cabecalho">
+                    <a href="/Home/Index"><img src="/Content/imagens/logo.png" id="logo" alt="Catálogo de Livros" /></a>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="conteudo">
+            <nav class="col-md-3" id="menu">
+                <div id='cssmenu'>
+                    <ul>
+                        <li class='active'><a href='#'><span>Menu</span></a></li>
+                        <li class='has-sub'>
+                            <a href='#'><span>Usuário</span></a>
+                            <ul>
+                                <li><a href='/Usuario/CadastroUsuario'><span>Cadastrar Usuário</span></a></li>
+                                <li><a href='/Usuario/AtualizacaoUsuario'><span>Atualizar Usuário</span></a></li>
+                                <li><a href='/Usuario/LoginUsuario'><span>Realizar Login Usuário</span></a></li>
+                                <li><a href='/Usuario/EsqueciLogin'><span>Esqueci meu Login</span></a></li>
+                                <li><a href='/Usuario/EsqueciSenha'><span>Esqueci minha Senha</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'>
+                            <a href='#'><span>Obra</span></a>
+                            <ul>
+                                <li><a href='/Obra/CadastroObra'><span>Cadastrar Obra</span></a></li>
+                                <li class='last'><a href='/Obra/AtualizacaoObra'><span>Atualizar Obra</span></a></li>
+                                <li class='last'><a href='/Obra/AtivacaoDesativacaoObra'><span>Ativar/Desativar Obra</span></a></li>
+                                <li class='last'><a href='/Obra/ExclusaoObra'><span>Excluir Obra</span></a></li>
+                                <li class='last'><a href='/Obra/PesquisaObra'><span>Pesquisar Obra</span></a></li>
+                                <li class='last'><a href='/Obra/ExibicaoObras'><span>Exibir Obras</span></a></li>
+                                <li class='last'><a href='/Obra/ExibicaoObrasAtivas'><span>Exibir Obras Ativas</span></a></li>
+                                <li class='last'><a href='/Obra/ExibicaoObrasInativas'><span>Exibir Obras Inativas</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'>
+                            <a href='#'><span>Relatórios</span></a>
+                            <ul>
+                                <li><a href='#'><span>Exibir Relatório de Obras Cadastradas</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="col-md-9">
+                <aside id="usuarioAutenticado">
+                    @{
+                        if(Session["usuarioAutenticado"] != null)
+                        {
+                            Usuario usuarioAutenticado = (Usuario)Session["usuarioAutenticado"];
+                            usuarioAutenticado.FotoUsuario = new FotoUsuario();
+                            usuarioAutenticado.FotoUsuario = (FotoUsuario)Session["fotoUsuarioAutenticado"];
+                            UsuarioDal usuarioDal = new UsuarioDal();
+                            <br />
+                            <span class="bold">Nome: </span>@usuarioAutenticado.Nome;<br />
+                            <span class="bold">Login: </span>@usuarioAutenticado.Login;
+                            var @caminhoFoto = "/Fotos/FotoUsuario/" + @usuarioAutenticado.Nome + "_" + @usuarioAutenticado.Login + "/";
+                            @caminhoFoto = usuarioDal.ReturnFotoFull(@caminhoFoto, usuarioAutenticado.FotoUsuario.Foto);
+                            <img id="fotoUsuario" src="@caminhoFoto" width="55" height="55" alt="@usuarioAutenticado.Login" title="@usuarioAutenticado.Login" />
+                            <div id="btnLogoutUsuario">
+                                <a href="/Usuario/LogoutUsuario" class="btn btn-danger">Sair do Sistema</a>
+                            </div>
+                        }
+                    }
+                </aside>
+                @RenderBody()
+            </section>
+        </section>
+        <footer class="row">
+            <div class="col-md-12">
+                <div id="rodape">
+                    <img src="/Content/imagens/rodape.png" alt="">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿@model CatalogoLivros.Web.Models.Usuario.Cadastro.ModelViewCadastroUsuario
+@{
+    ViewBag.Title = "Usuário - Cadastrar Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuário - Cadastro de Usuário</h2>
+<a href="/Usuario/Index">Voltar</a>
+@using (Html.BeginForm("CadastrarUsuario", "Usuario", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    <aside class="textoSucesso">
+        <p>
+            @ViewBag.MensagemOk
+        </p>
+    </aside>
+    <aside class="textoErro">
+        <p>
+            @ViewBag.MensagemErro
+        </p>
+    </aside>
+    <aside class="textoErro">
+        <p>
+            @Html.ValidationSummary()
+        </p>
+    </aside>
+    <fieldset>
+        <br /><h3 class="h3">Dados do Usuário</h3>
+        <table>
+            <tr>
+                <th class="td">
+                    @Html.LabelFor(model => model.Nome)
+                </th>
+                <th class="td">
+                    @Html.TextBoxFor(model => model.Nome, new { @autofocus = true, @class="elementosFormulario", @placeholder = "Nome do Usuário..." })
+                </th>
+                <th class="td">
+                    @Html.LabelFor(model => model.Email)
+                </th>
+                <th class="td">
+                    @Html.TextBoxFor(model => model.Email, new { @type = "email", @class = "elementosFormulario", @placeholder = "Email do Usuário..." })
+                </th>
+            </tr>
+            <tr>
+                <th class="td">
+                    @Html.LabelFor(model => model.Login)
+                </th>
+                <th class="td">
+                    @Html.TextBoxFor(model => model.Login, new { @class = "elementosFormulario", @placeholder = "Login do Usuário..." })
+                </th>
+                <th class="td">
+                    @Html.LabelFor(model => model.Senha)
+                </th>
+                <th class="td">
+                    @Html.PasswordFor(model => model.Senha, new { @class = "elementosFormulario", @placeholder = "Senha do Usuário..." })
+                </th>
+            </tr>
+            <tr>
+                <th class="td" colspan="2">
+                    @Html.LabelFor(model => model.TipoCriptografia)<br />
+                    <span class="bold">MD5:</span>
+                    @Html.RadioButtonFor(model => model.TipoCriptografia, "MD5")
+                    <span class="bold">SHA1:</span>
+                    @Html.RadioButtonFor(model => model.TipoCriptografia, "SHA1")
+                </th>
+            </tr>
+        </table>
+        <br /><h3 class="h3">Dados da Foto</h3>
+        <table>
+            <tr>
+                <th class="td">
+                    @Html.LabelFor(model => model.FotoUsuario)
+                </th>
+                <th class="td">
+                    <input type="file" name="fotoUsuario" />
+                </th>
+            </tr>
+            <tr>
+                <th class="td">
+                    @Html.LabelFor(model => model.NomeFotoUsuario)
+                </th>
+                <th class="td">
+                    @Html.TextBoxFor(model => model.NomeFotoUsuario, new { @class = "elementosFormulario", @placeholder = "Nome da Foto do Usuário..." })
+                </th>
+            </tr>
+            <tr>
+                <th class="td" valign="top">
+                    @Html.LabelFor(model => model.DescricaoFotoUsuario)
+                </th>
+                <th class="td">
+                    @Html.TextAreaFor(model => model.DescricaoFotoUsuario, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição da Foto do Usuário..." })
+                </th>
+            </tr>
+            <tr>
+                <th class="td">
+                    <input type="submit" value="Cadastrar Usuário" class="btn btn-success" />
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+}

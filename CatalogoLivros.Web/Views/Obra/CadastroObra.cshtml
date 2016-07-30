@@ -1,0 +1,136 @@
+﻿@model CatalogoLivros.Web.Models.Obra.Cadastro.ModelViewCadastroObra
+@{
+    ViewBag.Title = "Obras - Cadastrar Obra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Obras - Cadastrar Obra</h2>
+<a href="/Obra/CatalogoServicosFuncionalidades">Voltar</a>
+@{
+    using (Html.BeginForm("CadastrarObra", "Obra", FormMethod.Post, new { @enctype = "multipart/form-data" })) 
+    {
+        @Html.AntiForgeryToken()    
+        <hr />
+        <aside class="textoSucesso">
+            <p>
+                @ViewBag.MensagemOk
+            </p>
+        </aside>
+        <aside class="textoErro">
+            <p>
+                @ViewBag.MensagemErro
+            </p>
+        </aside>
+        <aside class="textoErro">
+            <p>
+                @Html.ValidationSummary()
+            </p>
+        </aside>
+        <fieldset>
+            <br /><h3 class="h3">Dados da Obra</h3>
+            <table>
+                <tr>
+                    <th class="td">
+                        @Html.LabelFor(model => model.Titulo)
+                    </th>
+                    <th class="td">
+                        @Html.TextBoxFor(model => model.Titulo, new { @autofocus = true, @class = "elementosFormulario", @placeholder = "Título da Obra do Usuário..." })
+                    </th>
+                    <th class="td">
+                        @Html.LabelFor(model => model.Genero)
+                    </th>
+                    <th class="td">
+                        @Html.EnumDropDownListFor(model => model.Genero, "Selecione o Gênero", new { @class = "elementosFormulario" })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td" valign="top">
+                        @Html.LabelFor(model => model.ISBN)
+                    </th>
+                    <th class="td" valign="top">
+                        @Html.TextBoxFor(model => model.ISBN, new { @id = "txtISBN", @maxlength = "13", @class = "elementosFormulario", @placeholder = "ISBN da Obra do Usuário..." })
+                    </th>
+                    <th class="td" valign="top">
+                        @Html.LabelFor(model => model.Sinopse)
+                    </th>
+                    <th class="td">
+                        @Html.TextAreaFor(model => model.Sinopse, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Sinópse da Obra do Usuário..." })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td">
+                        @Html.LabelFor(model => model.StatusObra)
+                    </th>
+                    <th class="td">
+                        @Html.EnumDropDownListFor(model => model.StatusObra, new { @class = "elementosFormulario" })
+                    </th>
+                </tr>
+            </table>
+            <h3 class="h3">Dados da Foto</h3>
+            <table>
+                <tr>
+                    <th class="td">
+                        @Html.LabelFor(model => model.FotoObra)
+                    </th>
+                    <th class="td">
+                        <input type="file" name="fotoObra" />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td" valign="top">
+                        @Html.LabelFor(model => model.DescricaoFotoObra)
+                    </th>
+                    <th class="td">
+                        @Html.TextAreaFor(model => model.DescricaoFotoObra, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição da Foto da Obra do Usuário..." })
+                    </th>
+                </tr>
+            </table>
+            <h3 class="h3">Dados do Autor</h3>
+            <table>
+                <tr>
+                    <th class="td" valign="top">
+                        @Html.LabelFor(model => model.NomeAutor)
+                    </th>
+                    <th class="td" valign="top">
+                        @Html.TextBoxFor(model => model.NomeAutor, new { @class = "elementosFormulario", @placeholder = "Nome do Autor da Obra do Usuário..." })
+                    </th>
+                    <td class="td" valign="top">
+                        @Html.LabelFor(model => model.DescricaoAutor)
+                    </td>
+                    <th class="td">
+                        @Html.TextAreaFor(model => model.DescricaoAutor, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição do Autor da Obra do Usuário..." })
+                    </th>
+                </tr>
+            </table>
+            <h3 class="h3">Dados da Editora</h3>
+            <table>
+                <tr>
+                    <th class="td">
+                        @Html.LabelFor(model => model.NomeEditora)
+                    </th>
+                    <th class="td">
+                        @Html.TextBoxFor(model => model.NomeEditora, new { @class = "elementosFormulario", @placeholder = "Nome da Editora da Obra do Usuário..." })
+                    </th>
+                    <th class="td">
+                        @Html.LabelFor(model => model.TipoEditora)
+                    </th>
+                    <th class="td">
+                        @Html.EnumDropDownListFor(model => model.TipoEditora, "Selecione o Tipo da Editora", new { @class = "elementosFormulario" })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td" valign="top">
+                        @Html.LabelFor(model => model.DescricaoEditora)
+                    </th>
+                    <th class="td">
+                        @Html.TextAreaFor(model => model.DescricaoEditora, new { @class = "elementosFormulario", @cols = "21", @rows = "6", @placeholder = "Descrição da Editora da Obra do Usuário..." })
+                    </th>
+                </tr>
+                <tr>
+                    <th class="td">
+                        <input type="submit" value="Cadastrar Obra" class="btn btn-success" />
+                    </th>
+                </tr>
+            </table>
+        </fieldset>
+    }
+}

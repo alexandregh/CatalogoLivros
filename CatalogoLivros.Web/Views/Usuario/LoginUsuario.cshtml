@@ -1,0 +1,49 @@
+﻿@model CatalogoLivros.Web.Models.Usuario.LoginUsuario.ModelViewLoginUsuario
+@{
+    ViewBag.Title = "Usuário - Login do Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuário - Login do Usuário</h2>
+<a href="/Usuario/Index">Voltar</a>
+@using (Html.BeginForm("LogarUsuario", "Usuario", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    <aside class="textoSucesso">
+        <p>
+            @ViewBag.MensagemOk
+        </p>
+    </aside>
+    <aside class="textoErro">
+        <p>
+            @ViewBag.MensagemErro
+        </p>
+    </aside>
+    <aside class="textoErro">
+        <p>
+            @Html.ValidationSummary()
+        </p>
+    </aside>
+    <fieldset>
+        <table>
+            <tr>
+                <td class="tdPesquisa">
+                    @Html.LabelFor(model => model.Login)
+                </td>
+                <td class="tdPesquisa">
+                    @Html.TextBoxFor(model => model.Login, new { @autofocus = true, @class = "elementosFormulario", @placeholder = "Login do Usuário..." })
+                </td>
+                <td class="tdPesquisa">
+                    @Html.LabelFor(model => model.Senha)
+                </td>
+                <td class="tdPesquisa">
+                    @Html.PasswordFor(model => model.Senha, new { @class = "elementosFormulario", @placeholder = "Senha do Usuário..." })
+                </td>
+                <td class="tdPesquisa">
+                    <input type="submit" value="Logar Usuário" class="btn btn-primary" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}

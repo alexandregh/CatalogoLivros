@@ -1,0 +1,39 @@
+﻿fieldset
+{
+    border: 1px solid #000;
+    border-radius:5px 5px;
+    margin-bottom: 15px;
+}
+.td
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+.tdPesquisa
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#btnLogoutUsuario
+{
+    display:block; 
+    position:absolute; 
+    top: 80px; 
+    left:160px;
+}
+.elementosFormulario
+{
+    border: 2px solid #000;
+    background-color: #A5967F;
+    color:#000;
+    font-weight:bold;
+}
+.imgObras
+{
+    width: 100px;
+    height: 120px;
+    border: 1px solid #000;
+}

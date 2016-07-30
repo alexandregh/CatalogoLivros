@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.Web", "CatalogoLivros.Web\CatalogoLivros.Web.csproj", "{9BEF470E-26CA-4ACA-A597-0C7A2206638E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Camada de Apresentação", "1 - Camada de Apresentação", "{3C1983A4-DB66-4AE1-81D1-96BBFF952CFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Camada de Acesso ao Banco de Dados", "6 - Camada de Acesso ao Banco de Dados", "{9FF604AF-6C7F-43E5-8097-341B8F03E22A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Camada de Dominio", "3 - Camada de Dominio", "{2E5B2BF9-991F-4D77-B538-7450C81B9D92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Camada de Utilitários", "2 - Camada de Utilitários", "{FC8F4955-8FCC-456A-8F6B-E08F05678AC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Camada de Gerenciamento e Manipulação de Dados", "5 - Camada de Gerenciamento e Manipulação de Dados", "{E8135207-3576-47B9-BC5F-0CF3F1401017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.Util", "CatalogoLivros.Util\CatalogoLivros.Util.csproj", "{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.Domain", "CatalogoLivros.Domain\CatalogoLivros.Domain.csproj", "{64C7EAE3-A421-42D4-AC48-C4DFC24E3638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.DAL", "CatalogoLivros.DAL\CatalogoLivros.DAL.csproj", "{F41121C2-DF68-4CC3-BB53-4338CD7E1A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.SGBDDAL", "CatalogoLivros.SGBDDAL\CatalogoLivros.SGBDDAL.csproj", "{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Camada de Interfaces", "4 - Camada de Interfaces", "{B9718A5D-CA42-4CE7-A293-F59FC58F4426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoLivros.Interface", "CatalogoLivros.Interface\CatalogoLivros.Interface.csproj", "{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BEF470E-26CA-4ACA-A597-0C7A2206638E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEF470E-26CA-4ACA-A597-0C7A2206638E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEF470E-26CA-4ACA-A597-0C7A2206638E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEF470E-26CA-4ACA-A597-0C7A2206638E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C7EAE3-A421-42D4-AC48-C4DFC24E3638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C7EAE3-A421-42D4-AC48-C4DFC24E3638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C7EAE3-A421-42D4-AC48-C4DFC24E3638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C7EAE3-A421-42D4-AC48-C4DFC24E3638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41121C2-DF68-4CC3-BB53-4338CD7E1A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41121C2-DF68-4CC3-BB53-4338CD7E1A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41121C2-DF68-4CC3-BB53-4338CD7E1A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41121C2-DF68-4CC3-BB53-4338CD7E1A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BEF470E-26CA-4ACA-A597-0C7A2206638E} = {3C1983A4-DB66-4AE1-81D1-96BBFF952CFF}
+		{D0CDD8F0-4923-4B48-A92D-0A489F98A4D2} = {9FF604AF-6C7F-43E5-8097-341B8F03E22A}
+		{64C7EAE3-A421-42D4-AC48-C4DFC24E3638} = {2E5B2BF9-991F-4D77-B538-7450C81B9D92}
+		{CFF24D2F-8BE8-41A6-AA0C-9CEFCE80CCFB} = {FC8F4955-8FCC-456A-8F6B-E08F05678AC3}
+		{F41121C2-DF68-4CC3-BB53-4338CD7E1A00} = {E8135207-3576-47B9-BC5F-0CF3F1401017}
+		{75D32D5C-FE46-4E93-A1E9-ECEDB37E9315} = {B9718A5D-CA42-4CE7-A293-F59FC58F4426}
+	EndGlobalSection
+EndGlobal
